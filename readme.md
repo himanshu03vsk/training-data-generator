@@ -39,7 +39,9 @@ KeyError: 'start'`
 
 <br>
 To fix this, replace the `xml_caption_to_srt()` method of  `catpions.py` file in `pysrt` with below code<br>
-    `def xml_caption_to_srt(self, xml_captions: str) -> str:
+`
+
+    def xml_caption_to_srt(self, xml_captions: str) -> str:
         """Convert xml caption tracks to "SubRip Subtitle (srt)".
 
         :param str xml_captions:
