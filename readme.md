@@ -12,8 +12,9 @@ You can use `data_generator.py -h` for help and seeing the list of arguments tha
 ***<p style="color: #f00">Make sure that you only provide folder names that are present or will be created in current working directory.</p>***<br>
 ***<p style="color: #f00">`--format` flag represents in what format the video file that only has audio will be downloaded not the audio format that you wish to download in. By default the splitted audio is in `.wav` form.</p>***
 
-You may encounter error of something like this: <br>
-`KeyError                                  Traceback (most recent call last)
+You may encounter error of something like this: 
+
+```KeyError                                  Traceback (most recent call last)
 ~\test_pytube.py in <module>
      10 for v in p.videos[:3]:
      11     print("trying to get captions for:", v.title)
@@ -35,12 +36,15 @@ elf)
      84             end = start + duration
      85             sequence_number = i + 1  # convert from 0-indexed to 1.
 
-KeyError: 'start'`
+KeyError: 'start'
+```
 
-<br>
-To fix this, replace the `xml_caption_to_srt()` method of  `catpions.py` file in `pysrt` with below code<br>
-`
 
+
+
+To fix this, replace the ```xml_caption_to_srt()``` method of  ```catpions.py``` file in ```pysrt``` with below code<br>
+
+```
     def xml_caption_to_srt(self, xml_captions: str) -> str:
         """Convert xml caption tracks to "SubRip Subtitle (srt)".
 
@@ -75,4 +79,4 @@ To fix this, replace the `xml_caption_to_srt()` method of  `catpions.py` file in
                 )
                 segments.append(line)
                 i += 1
-        return "\n".join(segments).strip()`
+        return "\n".join(segments).strip()```
