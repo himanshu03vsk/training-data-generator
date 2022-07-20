@@ -52,7 +52,7 @@ def audiodn(filetype: str, bitrate, yt_obj, audio_folder: str, subtitle_folder:s
 def audio_sub_splitter(subs_folder: str, audio_folder: str, exp: str):
     a = os.getcwd()+os.sep+audio_folder
     export_folder = os.getcwd()+os.sep+exp
-    if not os.path.isdir(export_folder).exists():
+    if not os.path.isdir(export_folder):
         os.mkdir(export_folder)
     s = os.getcwd()+os.sep+subs_folder
     for num,file,subtitle in zip(range(len(os.listdir(s))),os.listdir(a),os.listdir(s)): #repeat steps for every subtitle
